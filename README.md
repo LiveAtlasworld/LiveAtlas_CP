@@ -1,88 +1,162 @@
+# 🌍 LiveAtlas — Real-time Virtual Tour Platform
 
-
-```markdown
-# LiveAtlas - Real-time Virtual Tour Platform 🌍
-
-**LiveAtlas** is a full-stack WebRTC application designed to connect local tour guides with global travelers through live, interactive broadcasts. Experience the world from your screen with low-latency, peer-to-peer streaming.
+**LiveAtlas** is a cutting-edge, full-stack WebRTC application designed to bridge the gap between local tour guides and global travelers. Through live, interactive broadcasts, guides can showcase locations in real-time, providing an immersive travel experience from anywhere in the world.
 
 ---
 
-## 🚀 Key Features
+## ✨ Features
 
-* **Dual Dashboards:** Dedicated interfaces for **Guides** (to create/manage tours) and **Tourists** (to browse and join sessions).
-* **Live WebRTC Video:** High-performance, real-time video streaming powered by peer-to-peer signaling.
-* **In-Room Controls:** Interactive features including Mute, Video Toggle, Fullscreen (Focus Mode), and End Call.
-* **Dynamic Discovery:** A real-time tourist dashboard that updates instantly as guides go live or end sessions.
-* **Image Uploads:** Guides can upload high-quality thumbnails to showcase their tours.
-* **Sky-Blue Theme:** A modern, travel-inspired UI built with clean "LiveAtlas" branding.
+- 🎭 **Dual-Role Ecosystem:** Dedicated dashboards for **Guides** (content creators) and **Tourists** (viewers)  
+- ⚡ **Low-Latency Streaming:** High-performance WebRTC video for near-instant interaction  
+- 🎛️ **Interactive Signal Controls:** Mute, Video Toggle, Fullscreen (Focus Mode), and End Call  
+- 🔴 **Live Discovery Engine:** Tourist dashboard updates in real-time as guides go live  
+- 🎨 **Modern UI:** Sky-blue travel theme with high-quality thumbnails  
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Layer | Technologies |
-| :--- | :--- |
+| Layer | Technology |
+|------|-----------|
 | **Frontend** | React.js, Vite, React Router, React Icons |
 | **Backend** | Django, Django Channels (ASGI), Daphne |
-| **Communication** | WebRTC (Signaling via WebSockets) |
-| **Database** | SQLite (Dev) / PostgreSQL (Prod) |
+| **Real-time** | WebRTC, WebSockets (Signaling) |
+| **Storage** | SQLite (Dev) / PostgreSQL (Production), Pillow |
 
 ---
 
-## 💻 Local Setup Instructions
+## 📋 System Requirements
 
-### 1. Clone the Repository
+Make sure you have the following installed:
+
+- **Python:** 3.10+  
+- **Node.js:** 18+  
+- **npm:** 9+  
+- **Git:** Latest version  
+- **Browser:** Chrome / Edge (recommended for WebRTC)
+
+---
+
+## 💻 Quick Start
+
+### 1️⃣ Clone the Repository
+
 ```bash
-git clone [https://github.com/mekalasindhuja70/LiveAtlas.git](https://github.com/mekalasindhuja70/LiveAtlas.git)
+git clone https://github.com/mekalasindhuja70/LiveAtlas.git
 cd LiveAtlas
+
 
 ```
 
-### 2. Backend Setup
+---
+
+## 🔧 Backend Setup
 
 ```bash
 cd backend
+
+# Create virtual environment
 python -m venv venv
 
-# Windows:
+# Activate (Windows)
 .\venv\Scripts\activate
-# Mac/Linux:
+
+# Activate (Mac/Linux)
 source venv/bin/activate
 
-# Install Dependencies:
+# Install dependencies
 pip install django daphne channels pillow
 
-# Setup Database:
+# Run migrations
 python manage.py makemigrations
 python manage.py migrate
 
-# Start Server:
+# Start server
 python manage.py runserver
-
 ```
 
-### 3. Frontend Setup
+---
+
+## 🎨 Frontend Setup
 
 ```bash
 cd ../frontend
+
+# Install dependencies
 npm install
 
-# Start Frontend:
+# Start development server
 npm run dev
-
 ```
 
 ---
 
-## ✅ Final Project Checklist
+## 🚀 How to Use
 
-* **Guide Flow:** Login → Create Tour with Image → Click "Start Broadcast" → Enter Room.
-* **User Flow:** Login → Browse "Active Broadcasts" → Click "Join" → Enter Room.
-* **Permissions:** Ensure you are running on `localhost` or `HTTPS` for browser camera/microphone permissions to function correctly.
+### 👩‍💼 For Guides
 
-```
+1. Login and open your dashboard
+2. Create a tour with title + thumbnail
+3. Click **Start Broadcast**
+4. Begin live streaming
 
 ---
-**Would you like me to add a "License" or "Contributors" section to the bottom of the file as well?**
 
-```
+### 🌐 For Tourists
+
+1. Login to the platform
+2. Browse **Active Broadcasts**
+3. Click **Join Broadcast**
+4. Interact with the guide in real time
+
+---
+
+## 🛡️ Architecture & Security
+
+* 🔄 **Signaling:** Django Channels + WebSockets exchange SDP & ICE candidates
+* 🎥 **Media:** Direct Peer-to-Peer (P2P) streaming using WebRTC
+* 🔐 **Permissions:** Camera/mic require **HTTPS or localhost**
+* 🧠 **ASGI Server:** Daphne handles async communication
+
+---
+
+## ✅ Troubleshooting
+
+### 📷 Camera Not Loading
+
+* Use **HTTPS or localhost**
+* Check browser permissions
+* Ensure no other app is using the camera
+
+### 🔌 Connection Failed
+
+* Verify Django/Daphne server is running
+* Check WebSocket connection in Network tab
+* Ensure ports are not blocked
+
+### 🖼️ Image Issues
+
+* Confirm Pillow is installed
+* Verify `MEDIA_ROOT` and `MEDIA_URL` in `settings.py`
+* Run migrations properly
+
+---
+
+## 🔮 Future Enhancements
+
+* 🌍 Multi-language support
+* 💳 Paid tour integration
+* 📱 Mobile app version
+* 🧑‍🤝‍🧑 Multi-viewer rooms
+* ☁️ Cloud deployment (AWS/GCP)
+
+---
+
+## 👩‍💻 Author
+
+ * **mekalasindhuja70**
+ * **m-priyambica**
+ * **Pragthi060**
+ * **srichandanachavali**
+
+
